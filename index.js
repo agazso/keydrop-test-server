@@ -5,7 +5,7 @@ const clients = {};
 
 wss.on('connection', function connection(ws) {
   ws.on('message', function incoming(data) {
-    console.log('received: %s', data);
+    console.log(new Date().toString(), 'received: %s', data);
     const message = JSON.parse(data);
 
     clients[message.sender] = ws;
